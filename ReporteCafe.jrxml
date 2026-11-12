@@ -1,0 +1,47 @@
+<!-- Created with Jaspersoft Studio version 7.0.8.final using JasperReports Library version 7.0.8-6f896111  -->
+<jasperReport name="ReporteCafe" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c1b52a78-9e11-4b16-928e-591b6190f84a">
+	<parameter name="anio" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2026"]]></defaultValueExpression>
+	</parameter>
+	<field name="idcafe" class="java.lang.Integer"/>
+	<field name="productor" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Float"/>
+	<title height="50">
+		<element kind="textField" uuid="7cfd47c4-2792-411a-a681-ec06913e6d8a" x="0" y="10" width="555" height="30" fontSize="18.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA["Cafe reportes  " + $P{anio}]]></expression>
+		</element>
+	</title>
+	<columnHeader height="25">
+		<element kind="staticText" uuid="5fa7c3bc-1188-4c17-9154-2c0926d52671" x="0" y="0" width="100" height="25" fontSize="11.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<bottomPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[ID Café]]></text>
+		</element>
+		<element kind="staticText" uuid="f9ea531b-417d-4c3e-8c65-27a4192b0051" x="100" y="0" width="300" height="25" fontSize="11.0" bold="true" hTextAlign="Left" vTextAlign="Middle">
+			<box>
+				<bottomPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Productor]]></text>
+		</element>
+		<element kind="staticText" uuid="c08e58a7-3ce9-4a0b-967f-4775e53303c2" x="400" y="0" width="155" height="25" fontSize="11.0" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<box>
+				<bottomPen lineWidth="1.0"/>
+			</box>
+			<text><![CDATA[Cantidad]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<element kind="textField" uuid="7ab4a530-eb3d-4c7b-bf2d-7bb2157a9228" x="0" y="0" width="100" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{idcafe}]]></expression>
+			</element>
+			<element kind="textField" uuid="09ef0a4a-0a25-4fc1-a9f7-6d65377f0fc1" x="100" y="0" width="300" height="20" hTextAlign="Left" vTextAlign="Middle">
+				<expression><![CDATA[$F{productor}]]></expression>
+			</element>
+			<element kind="textField" uuid="b5a198c9-9ebc-4c49-9831-5079a4c861ea" x="400" y="0" width="155" height="20" pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
+				<expression><![CDATA[$F{cantidad}]]></expression>
+			</element>
+		</band>
+	</detail>
+</jasperReport>
