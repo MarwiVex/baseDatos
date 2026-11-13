@@ -1,6 +1,7 @@
 package com.example.basedatos;
 
 import com.example.basedatos.ADMON.AdmonCafe;
+import com.example.basedatos.ADMON.AdmonReporte;
 import com.example.basedatos.ADMON.AdmonVariedadCafe;
 import com.example.basedatos.POJO.Cafe;
 import com.example.basedatos.POJO.VariedadCafe;
@@ -14,6 +15,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -132,5 +135,12 @@ public class CafeController implements Initializable {
         textFieldID.setText("");
         textFieldCantidad.setText("");
         comboVariedad.getSelectionModel().clearSelection();
+    }
+
+    @FXML
+    public void clicReporte(ActionEvent actionEvent){
+        AdmonReporte reportes = new AdmonReporte();
+        JasperViewer vista = new JasperViewer(reportes.reporteCafes(), false);
+        vista.setVisible(true);
     }
 }
